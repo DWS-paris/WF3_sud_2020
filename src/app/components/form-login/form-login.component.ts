@@ -26,7 +26,9 @@ export class FormLoginComponent implements OnInit {
     });
   };
 
+  // eq. DOMContentLoaded du composant
   ngOnInit(): void {
+    // Initialiser le formulaire une fois que le composant est chargé
+    this.resetForm();
   }
-
 }

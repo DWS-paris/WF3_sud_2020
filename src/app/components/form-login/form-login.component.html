@@ -1,6 +1,11 @@
 <!-- Création d'un formulaire -->
-<form action="#">
-    <input type="email" placeholder="Votre email" minlength="5" required>
-    <input type="password" placeholder="Votre mot de passe" minlength="5" required>
-    <button type="submit">Login</button>
-</form>
+<section *ngIf="formData" >
+    <!-- Utilisation de la variable formData dans le formulaire -->
+    <form 
+        [formGroup]="formData"
+    >
+        <input type="email" placeholder="Votre email" minlength="5" required>
+        <input type="password" placeholder="Votre mot de passe" minlength="5" required>
+        <button type="submit">Login</button>
+    </form>
+</section>

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Importer le module pour gérer des formualires
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 // Import des composants de l'application
 import { AppComponent } from './app.component';
@@ -21,7 +21,8 @@ import { FormLoginComponent } from './components/form-login/form-login.component
   // Ajouter les modules dans le tableau des imports
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
