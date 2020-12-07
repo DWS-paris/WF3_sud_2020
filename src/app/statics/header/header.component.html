@@ -1,0 +1,14 @@
+<header>
+    <!-- Injecter le contenu d'une variable dans une balise {{VAR}} -->
+    <h1>{{title}}</h1>
+
+    <nav>
+        <ul>
+            <!-- Faire une boucle sur une collection de données *ngFor -->
+            <li *ngFor="let item of navCollection">
+                <!-- Modififier le contenu HTML d'une balise [innerHTML] -->
+                <a [href]="item.path" [innerHTML]="item.name"></a>
+            </li>
+        </ul>
+    </nav>
+</header>
