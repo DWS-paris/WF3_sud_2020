@@ -26,6 +26,11 @@ export class FormLoginComponent implements OnInit {
     });
   };
 
+  // Créer une fonction pour la soumission du formulaire
+  public submitForm = function(){
+    console.log(this.formData);
+  }
+
   // eq. DOMContentLoaded du composant
   ngOnInit(): void {
     // Initialiser le formulaire une fois que le composant est chargé

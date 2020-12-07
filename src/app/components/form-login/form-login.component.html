@@ -1,8 +1,9 @@
 <!-- Création d'un formulaire -->
-<section *ngIf="formData" >
+<section *ngIf="formData">
     <!-- Utilisation de la variable formData dans le formulaire -->
     <form 
         [formGroup]="formData"
+        (submit)="submitForm()"
     >
         <input 
             formControlName="email"
@@ -13,6 +14,9 @@
             type="password" placeholder="Votre mot de passe" minlength="5" required
         >
 
-        <button type="submit">Login</button>
+        <button 
+            [disabled]="!formData.valid"
+            type="submit"
+        >Login</button>
     </form>
 </section>
