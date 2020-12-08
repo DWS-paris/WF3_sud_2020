@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 // Importer les module pour la gestion du formulaire
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   templateUrl: './form-login.component.html'
 })
 export class FormLoginComponent implements OnInit {
+  // Créer un évènement
+  @Output() userState = new EventEmitter();
 
   // Déclarer une variable pour le formulaire
   public formData: FormGroup;
@@ -34,6 +36,9 @@ export class FormLoginComponent implements OnInit {
 
     // Vider les champs (inputs) du formulaire
     this.resetForm();
+
+    // Emettre l'évènement userState
+    this.userState.emit(true);
   }
 
   // eq. DOMContentLoaded du composant

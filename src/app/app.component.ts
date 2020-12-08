@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
       Importer le composant app-header 
       et injecter la valeur de connectedUser
     -->
-    <app-header [connectedUser]="connectedUser"></app-header>
+    <app-header [connectedUser]="connectedUser" (userState)="connectedUser = $event"></app-header>
 
     <main>
       <!-- Importer le composant form-login -->
-      <app-form-login *ngIf="!connectedUser"></app-form-login>
+      <app-form-login *ngIf="!connectedUser" (userState)="connectedUser = $event"></app-form-login>
 
       <!-- Ajouter la directive (balise HTML spécifique) pour afficher les composants des routes -->
       <router-outlet></router-outlet>
