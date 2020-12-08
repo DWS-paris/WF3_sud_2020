@@ -28,7 +28,12 @@ export class FormLoginComponent implements OnInit {
 
   // Créer une fonction pour la soumission du formulaire
   public submitForm = function(){
-    console.log(this.formData);
+    // [Pur JS] Stocker l'email et le mot de passe en localStorage
+    localStorage.setItem('user-email', this.formData.value.email);
+    localStorage.setItem('user-password', this.formData.value.password);
+
+    // Vider les champs (inputs) du formulaire
+    this.resetForm();
   }
 
   // eq. DOMContentLoaded du composant
