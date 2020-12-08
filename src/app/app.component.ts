@@ -3,7 +3,24 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  template: `
+    <!-- 
+      Importer le composant app-header 
+      et injecter la valeur de connectedUser
+    -->
+    <app-header [connectedUser]="connectedUser"></app-header>
+
+    <main>
+      <!-- Importer le composant form-login -->
+      <app-form-login *ngIf="!connectedUser"></app-form-login>
+
+      <!-- Ajouter la directive (balise HTML spécifique) pour afficher les composants des routes -->
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- Importer le composant app-footer -->
+    <app-footer></app-footer>
+  `
 })
 export class AppComponent implements OnInit {
 

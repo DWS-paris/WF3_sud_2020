@@ -5,6 +5,12 @@ import { NgModule } from '@angular/core';
 // Importer le module pour gérer des formualires
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+// Importer le module Angular pour la gestion des routes
+import { RouterModule } from "@angular/router";
+
+// Importer le modules pour gérer les routes
+import { AppRouterModule } from "./app.router";
+
 // Import des composants de l'application
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './statics/header/header.component';
@@ -30,7 +36,9 @@ import { UserPageComponent } from './routes/user-page/user-page.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // Configuration du module du router
+    RouterModule.forRoot( AppRouterModule, { onSameUrlNavigation: 'reload' } )
   ],
   providers: [],
   bootstrap: [AppComponent]
