@@ -20,11 +20,11 @@ export class HomePageComponent implements OnInit {
   private getItems = function(){
     // Utilisation d'une fonction d'un service
     this.CrudService.readAllItems()
-    .then( function(data){
+    .then( data => {
       // Ajouter le tableau data dans postCollection
       this.postCollection = data;
     })
-    .catch( function(err){
+    .catch(err => {
       console.error(err);
     })
   }
