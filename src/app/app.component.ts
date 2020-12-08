@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       this.connectedUser = true;
     }
   };
-
+ 
   ngOnInit(): void {
     // Vérifier la présence des valeurs en localStorage une fois le composanr chagé
     this.checkUser();
