@@ -1,1 +1,7 @@
-<p>home-page works!</p>
+<!-- Afficher une balise ul si postCollection contient des données -->
+<ul *ngIf="postCollection !== null">
+    <!-- Faire une boucle sur la collection postCollection -->
+    <li *ngFor="let item of postCollection">
+        <a href="#" [innerHTML]="item.title"></a>
+    </li>
+</ul>
