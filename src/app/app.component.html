@@ -1,8 +1,12 @@
-<!-- Importer le composant app-header -->
-<app-header></app-header>
+<!-- 
+    Importer le composant app-header 
+    et injecter la valeur de connectedUser
+-->
+<app-header [connectedUser]="connectedUser"></app-header>
 
 <main>
-    <app-form-login></app-form-login>
+    <!-- Afficher le formulaire si connectedUser est égal à false -->
+    <app-form-login *ngIf="!connectedUser"></app-form-login>
 </main>
 
 <!-- Importer le composant app-footer -->

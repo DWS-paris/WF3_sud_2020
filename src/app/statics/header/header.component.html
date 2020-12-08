@@ -1,6 +1,10 @@
 <header>
-    <!-- Injecter le contenu d'une variable dans une balise {{VAR}} -->
-    <h1>{{title}}</h1>
+    <!-- 
+        Injecter le contenu d'une variable dans une balise {{VAR}} || [innerHtml] || [innerText]
+        Afficher soit "Hello World" soit l'adresse email de l'internaute
+    -->
+    <h1 *ngIf="connectedUser">{{userEmail}}</h1>
+    <h1 *ngIf="!connectedUser" [innerHTML]="title"></h1>
 
     <nav>
         <ul>
@@ -8,6 +12,10 @@
             <li *ngFor="let item of navCollection">
                 <!-- Modififier le contenu HTML d'une balise [innerHTML] -->
                 <a [href]="item.path" [innerHTML]="item.name"></a>
+            </li>
+            <!-- Ajouter le lien pour l'internaute connecté -->
+            <li *ngIf="connectedUser">
+                <a href="/user">Mon compte</a>
             </li>
         </ul>
     </nav>

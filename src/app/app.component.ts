@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
 
     // [Pur JS] Vérifier la valeur des localStorages
     if( userEmail && userPassword !== null ){
-      console.log('Connected');
+      // Connecter l'internaute
       this.connectedUser = true;
     }
   };
